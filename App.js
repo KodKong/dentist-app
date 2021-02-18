@@ -1,21 +1,31 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Group, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import styled from "styled-components/native";
+import Groups from "./Components/Groups";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+   <Container>
+    <Groups title={"15 марта"}
+    items={[
+      {
+      time: `15:30`,  
+      user: {
+        fullname: "Роман Музафаров", 
+        procedure: `чистка`,
+      }
+      }
+    ]}
+    
+    ></Groups>
+    </Container>  
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
+const Container = styled.View`
+
+  flex: 1; 
+  margin-top: 50px; 
+
+`; 
